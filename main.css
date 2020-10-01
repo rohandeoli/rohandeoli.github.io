@@ -1,0 +1,418 @@
+/* GLOBAL CSS BEGIN */
+:root {
+    --font-heading: 'Poppins', sans-serif;
+    --font-text: 'Raleway', sans-serif;
+    --color-blue: #50c8ea;
+    --color-pink: #fa7ab9;
+}
+
+*, html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    box-sizing: border-box;
+}
+/* GLOBAL CSS END */
+
+
+/* ******************************************************************************************** */
+
+
+/* NAVBAR CSS BEGIN */
+#navbar {
+    position: fixed;
+    height: 9vh;
+    width: 100%;
+    font-family: var(--font-heading);
+    background-color: var(--color-blue);
+}
+
+.nav-list {
+    height: 9vh;
+    width: 40vw;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#navbar a {
+    text-decoration: none;
+    color: white;
+}
+
+#navbar a:hover {
+    font-size: larger;
+    color: var(--color-pink);
+    border-bottom: 3px solid var(--color-pink);
+}
+
+#nav-button {
+    display: none;
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    cursor: pointer;
+}
+
+.button-lines {
+    width: 23px;
+    height: 4px;
+    background-color: white;
+    margin: 3px;
+}
+
+@media screen and (max-width: 1024px){
+    #navbar ul {
+        width: 50vw;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .nav-list {
+        position: absolute;
+        right: 0;
+        height: 60vh;
+        width: 60vw;
+        top: 9vh;
+        background-color: var(--color-blue);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-out;
+    }
+
+    #navbar li {
+        opacity: 0;
+    }
+
+    #navbar a {
+        color: white;
+    }
+
+    #nav-button {
+        display: block;
+    }
+}
+
+.nav-active {
+    transform: translateX(0%);
+}
+
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+/* NAVBAR CSS END */
+
+
+/* ******************************************************************************************** */
+
+
+/* FILLER SECTION CSS BEGIN */
+#filler {
+    height: 9vh;
+}
+/* FILLER SECTION CSS END */
+
+
+/* ******************************************************************************************** */
+
+
+/* HOME SECTION CSS BEGIN */
+#home {
+    background-color: var(--color-blue);
+    color: white;
+    text-align: center;
+}
+
+#home h1 {
+    padding-top: 80px;
+    font-size: 60px;
+    font-family: var(--font-heading);
+}
+
+#home h3 {
+    padding-top: 45px;
+    font-size: 35px;
+    font-family: var(--font-text);
+}
+
+#social-icons {
+    padding-top: 45px;
+    padding-bottom: 45px;
+    margin: auto;
+    width: 80vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#social-icons i {
+    color: white;
+}
+
+#social-icons i:hover {
+    color: var(--color-pink);
+}
+/* HOME SECTION CSS END */
+
+
+/* ******************************************************************************************** */
+
+
+/* EDUCATION SECTION CSS BEGIN */
+#education {
+    text-align: center;
+    padding-bottom: 40px;
+    border-bottom: 3px solid var(--color-blue);
+}
+
+#education h2 {
+    padding-top: 40px;
+    font-size: 35px;
+    font-family: var(--font-heading);
+}
+
+#edu-div {
+    margin: 35px auto;
+}
+
+.card {
+    margin: 50px auto;
+    box-shadow: 3px 3px 5px 6px #474747;
+    max-width: 30vw;
+    padding: 20px;
+    font-family: var(--font-text);
+}
+
+.card h3 {
+    font-size: 25px;
+    font-family: var(--font-text);
+}
+
+.card ul {
+    margin-top: 20px;
+    text-align: left;
+}
+
+.card li {
+    list-style: none;
+}
+
+.card-details {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.inner-details {
+    display: inline-block;
+    text-align: left;
+}
+
+.inner-details p {
+    padding-top: 8px;
+    font-family: var(--font-text);
+}
+
+@media screen and (max-width: 768px) {
+    .card {
+        max-width: 40vw;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .card {
+        max-width: 60vw;
+    }
+}
+/* EDUCATION SECTION CSS END */
+
+
+/* ******************************************************************************************** */
+
+
+/* WORK SECTION CSS BEGIN */
+#work {
+    text-align: center;
+    padding-bottom: 40px;
+    border-bottom: 3px solid var(--color-blue);
+}
+
+#work h2 {
+    padding-top: 40px;
+    font-size: 35px;
+    font-family: var(--font-heading);
+}
+/* WORK SECTION CSS END */
+
+
+/* ******************************************************************************************** */
+
+
+/* PROJECTS SECTION CSS BEGIN */
+#projects {
+    padding: 40px 0 40px 0;
+    text-align: center;
+    border-bottom: 3px solid var(--color-blue);
+}
+
+#projects h2 {
+    font-size: 35px;
+    font-family: var(--font-heading);
+    padding-bottom: 30px;
+}
+
+#projects-grid {
+    display: grid;
+    grid-template-columns: 33% 33% 34%;
+    text-align: center;
+}
+
+.project-item {
+    margin: 20px auto 25px auto;
+    width: fit-content;
+}
+
+.project-item a img {
+    max-width: 300px;
+    height: 200px;
+}
+
+.project-item h3 {
+    padding-top: 7px;
+    font-family: var(--font-text);
+}
+
+.desc-stack {
+    padding-top: 7px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.desc-stack p {
+    font-size: small;
+    font-family: var(--font-text);
+}
+
+@media screen and (max-width: 1024px){
+    #projects-grid {
+        grid-template-columns: 50% 50%;
+    }
+}
+
+@media screen and (max-width: 480px){
+    #projects-grid {
+        grid-template-columns: 100%;
+    }
+}
+/* PROJECTS SECTION CSS END */
+
+
+/* ******************************************************************************************** */
+
+
+/* SKILLS SECTION CSS BEGIN */
+#skills {
+    padding-bottom: 40px;
+    text-align: center;
+    border-bottom: 3px solid var(--color-blue);
+}
+
+#skills h2 {
+    padding-top: 40px;
+    font-size: 35px;
+    font-family: var(--font-heading);
+}
+
+.skills-div {
+    margin: 30px auto;
+    width: 75vw;
+    display: grid;
+    grid-template-columns: 34% 33% 33%;
+}
+
+.svg-div {
+    margin: 25px auto;
+    width: fit-content;
+    background-color: #f1f1f1;
+    box-shadow: 3px 3px 5px 6px #474747;
+    border-radius: 10px;
+}
+
+svg {
+    margin: 1rem;
+    text-align: center;
+}
+
+circle {
+    position: relative;
+    margin: auto;
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+}
+
+svg text {
+    text-anchor: middle;
+    stroke: black;
+    stroke-width: 2px;
+}
+
+.blue {
+    stroke: var(--color-blue);
+    stroke-width: 10;
+    fill: white;
+    stroke-dasharray: 376.8 376.8;
+    stroke-dashoffset: 113.04;
+}
+
+.white {
+    stroke: white;
+    stroke-width: 10;
+    fill: white;
+}
+
+@media screen and (max-width: 1024px) {
+    .skills-div {
+        grid-template-columns: 50% 50%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .skills-div {
+        grid-template-columns: 100%;
+    }
+}
+/* SKILLS SECTION CSS END */
+
+
+/* ******************************************************************************************** */
+
+
+/* FOOTER SECTION CSS BEGIN */
+#footer {
+    background-color: var(--color-blue);
+    color: white;
+    text-align: center;
+}
+
+#footer h5 {
+    padding: 20px 0px 5px 0px;
+    font-family: var(--font-heading);
+}
+/* FOOTER SECTION CSS END */
